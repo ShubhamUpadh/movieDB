@@ -11,8 +11,8 @@ public class user_table {
 
     public user_table(){}
 
-    public user_table(UUID id, String name){
-        this.id = id;
+    public user_table(String name){
+        this.id = UUID.randomUUID();
         this.name = name;
     }
 

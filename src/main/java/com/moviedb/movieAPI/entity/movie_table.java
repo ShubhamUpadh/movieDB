@@ -16,8 +16,8 @@ public class movie_table {
     public movie_table(){}
 
 
-    public movie_table(UUID id, String title, String description, Date release_date, String genre) {
-        this.id = id;
+    public movie_table(String title, String description, Date release_date, String genre) {
+        this.id = UUID.randomUUID();
         this.title = title;
         this.description = description;
         this.release_date = release_date;
