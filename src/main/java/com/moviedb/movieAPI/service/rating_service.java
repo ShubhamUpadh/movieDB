@@ -18,7 +18,7 @@ public class rating_service {
         return ratingRepository.save(rating);
     }
 
-    public Optional<rating_Table> getMovieById(UUID id){
+    public Optional<rating_Table> getRatingById(UUID id){
         return ratingRepository.findById(id);
     }
 

@@ -4,7 +4,7 @@ import com.moviedb.movieAPI.entity.user_table;
 import com.moviedb.movieAPI.service.user_service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -35,7 +35,7 @@ public class user_controller {
         return ResponseEntity.ok(userTables);
     }
 
-    @DeleteMapping("/{id")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable UUID id){
         userService.deleteUser(id);
         return ResponseEntity.noContent().build();
