@@ -12,7 +12,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/ratings")
-public class movie_controller {
+public class rating_controller {
 
     @Autowired
     private rating_service ratingService;
