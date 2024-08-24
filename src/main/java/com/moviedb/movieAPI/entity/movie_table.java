@@ -1,12 +1,14 @@
 package com.moviedb.movieAPI.entity;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
 import java.util.Date;
 import java.util.UUID;
 
 @Entity
 public class movie_table {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(updatable = false, nullable = false)
     private UUID id;
     private String title;
     private String description;
@@ -17,7 +19,7 @@ public class movie_table {
 
 
     public movie_table(String title, String description, Date release_date, String genre) {
-        this.id = UUID.randomUUID();
+        //this.id = UUID.randomUUID();
         this.title = title;
         this.description = description;
         this.release_date = release_date;

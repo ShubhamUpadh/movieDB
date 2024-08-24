@@ -1,6 +1,6 @@
 package com.moviedb.movieAPI.service;
 
-import com.moviedb.movieAPI.entity.rating_Table;
+import com.moviedb.movieAPI.entity.rating_table;
 import com.moviedb.movieAPI.repository.rating_repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,15 +14,15 @@ public class rating_service {
     @Autowired
     private rating_repository ratingRepository;
 
-    public rating_Table saveRating(rating_Table rating){
+    public rating_table saveRating(rating_table rating){
         return ratingRepository.save(rating);
     }
 
-    public Optional<rating_Table> getRatingById(UUID id){
+    public Optional<rating_table> getRatingById(UUID id){
         return ratingRepository.findById(id);
     }
 
-    public List<rating_Table> getAllRating(){
+    public List<rating_table> getAllRating(){
         return ratingRepository.findAll();
     }
 

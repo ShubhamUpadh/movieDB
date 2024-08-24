@@ -1,6 +1,6 @@
 package com.moviedb.movieAPI.controller;
 
-import com.moviedb.movieAPI.entity.rating_Table;
+import com.moviedb.movieAPI.entity.rating_table;
 import com.moviedb.movieAPI.service.rating_service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,20 +18,20 @@ public class rating_controller {
     private rating_service ratingService;
 
     @PostMapping
-    public ResponseEntity<rating_Table> createRating(@RequestBody rating_Table ratingTable){
-        rating_Table savedRating = ratingService.saveRating(ratingTable);
+    public ResponseEntity<rating_table> createRating(@RequestBody rating_table ratingTable){
+        rating_table savedRating = ratingService.saveRating(ratingTable);
         return ResponseEntity.ok(savedRating);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<rating_Table> getRatingById(@PathVariable UUID id){
-        Optional<rating_Table> ratingTable = ratingService.getRatingById(id);
+    public ResponseEntity<rating_table> getRatingById(@PathVariable UUID id){
+        Optional<rating_table> ratingTable = ratingService.getRatingById(id);
         return ratingTable.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
     @GetMapping
-    public ResponseEntity<List<rating_Table>> getAllRatings(){
-        List<rating_Table> ratingTables = ratingService.getAllRating();
+    public ResponseEntity<List<rating_table>> getAllRatings(){
+        List<rating_table> ratingTables = ratingService.getAllRating();
         return ResponseEntity.ok(ratingTables);
     }
 

@@ -1,33 +1,35 @@
 package com.moviedb.movieAPI.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 
 import java.util.UUID;
 
 @Entity
-public class rating_Table {
+public class rating_table {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(updatable = false, nullable = false)
     private UUID id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private user_table user;
 
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "movie_id", referencedColumnName = "id")
     private movie_table movie;
 
     private int rating;
 
-    public rating_Table() {
+    public rating_table() {
     }
 
-    public rating_Table(user_table user, movie_table movie, int rating) {
-        this.id = UUID.randomUUID();
+    public rating_table(user_table user, movie_table movie, int rating) {
+        //this.id = UUID.randomUUID();
         this.user = user;
         this.movie = movie;
         this.rating = rating;
