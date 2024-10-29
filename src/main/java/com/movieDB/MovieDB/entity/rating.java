@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "rating")
+@Table(name = "ratingRepository")
 public class rating {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,7 +19,7 @@ public class rating {
     @JoinColumn(name = "movie_id", nullable = false)
     private movie movie;
 
-    @Column(name = "rating")
+    @Column(name = "ratingRepository")
     private Short rating;
 
     public UUID getId() {
