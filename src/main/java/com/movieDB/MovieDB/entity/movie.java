@@ -10,7 +10,7 @@ import java.util.UUID;
 public class movie {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    private UUID id;
 
     @Column(name = "genre", length = 50)
     private String genre;
@@ -24,11 +24,11 @@ public class movie {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
