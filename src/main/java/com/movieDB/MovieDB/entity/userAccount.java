@@ -2,24 +2,22 @@ package com.movieDB.MovieDB.entity;
 
 import jakarta.persistence.*;
 
-import java.util.UUID;
-
 
 @Entity
 @Table(name = "user_account")
 public class userAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private int id;
 
     @Column(name = "name")
     private String name;
 
-    public UUID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
